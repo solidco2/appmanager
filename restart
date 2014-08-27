@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+DIR="$HOME/manager";
+PROGRAM_TITLE="nodeapp_node_manager";
+RUN="$DIR/app.js";
+
+if [ "$APP_MANAGER_PASSWORD" == "" ] ;then
+    echo "Environment APP_MANAGER_PASSWORD not set";
+fi
+
+killall $PROGRAM_TITLE
+
+cd $DIR && nohup $RUN &
+
